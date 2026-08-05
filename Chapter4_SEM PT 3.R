@@ -104,11 +104,6 @@ Encouragement_for_PA =~ I_can_count_on_people_to_be_physically_active_with_me + 
 Satisfaction_with_friendships_in_neighbourhood =~ Satisfied_with_number_of_friends + Visit_friends_at_their_place + Satisfied_with_number_of_people_I_know_in_neighbourhood
 Satisfaction_with_events_in_neighbourhood =~ Older_adults_are_informed_about_activities + Sufficient_activities_are_aimed_at_or_adapted_to_older_adults + Activities_are_easily_accessible + Older_adults_are_sufficiently_involved_in_the_organisation_of_activities
 
-#latent constructs mental health
-#Satisfaction_with_life =~ SWLS_ideal_world + SWLS_excellent_conditions + SWLS_satisfied_with_life + SWLS_important_goals + SWLS_change_nothing
-#Stress =~ Loss_of_sleep + Under_stress + Hard_to_overcome_difficulties + Feeling_unhappy_and_depressed 
-#No_self_esteem =~ Playing_useful_part + Lost_confidence + Feeling_worthless + Feeling_reasonable_happy
-#Successful_coping =~ Face_problems + Able_to_concentrate + Able_to_make_decisions + Able_to_enjoy_normal_activities
 
 #latent constructs health-related wellbeing
 Health_related_wellbeing =~ EQ_5D_index + VAS + Activity_rate_compared_to_peers
@@ -117,63 +112,22 @@ Health_related_wellbeing =~ EQ_5D_index + VAS + Activity_rate_compared_to_peers
 
 Built_environment =~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport
 Social_environment =~ Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
-#Mental_health =~ Satisfaction_with_life + Stress + No_self_esteem + Successful_coping
-#Wellbeing =~ Health_related_wellbeing + Mental_health
 
 #regressions
 
-#Frequency_public_transport ~ Built_environment + Social_environment
-
-#Frequency_public_transport ~ Qualitative_cycling_infrastructure + Cycling_friendly_environment + Qualitative_public_transport + Encouragement_for_PA + Satisfaction_with_events_in_neighbourhood
-#Frequency_public_transport ~ No_walking_friendly_environment + Cycling_friendly_environment + Negative_parking_experiences + Qualitative_public_transport + Attractive_living_environment + Satisfaction_with_friendships_in_neighbourhood
-#Frequency_public_transport ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Traffic_safety + Negative_parking_experiences + Encouragement_for_PA + Satisfaction_with_events_in_neighbourhood
 
 Frequency_public_transport ~ Poor_walking_infrastructure + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Negative_parking_experiences + Qualitative_public_transport
 
-#Wellbeing ~ Frequency_public_transport
-
-#Wellbeing ~ Built_environment
-#Wellbeing ~ Social_environment 
-
-#Wellbeing ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
 
 Health_related_wellbeing ~ Frequency_public_transport
-#Mental_health ~ Frequency_public_transport
 
 
-#Health_related_wellbeing ~ Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Attractive_living_environment + Satisfaction_with_events_in_neighbourhood
-#Health_related_wellbeing ~ Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Qualitative_public_transport + Encouragement_for_PA + Satisfaction_with_events_in_neighbourhood
-#Mental_health ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
-#Mental_health ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Traffic_safety + Qualitative_public_transport + Attractive_living_environment
 Health_related_wellbeing ~ Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Encouragement_for_PA + Satisfaction_with_events_in_neighbourhood
-
-
-#EQ_5D_index ~ Frequency_public_transport
-#Stress ~ Frequency_public_transport
-#No_self_esteem ~ Frequency_public_transport
-#Successful_coping ~ Frequency_public_transport
-
-#EQ_5D_index ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
-#Stress ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
-#No_self_esteem ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
-#Successful_coping ~ Poor_walking_infrastructure + No_walking_friendly_environment + Qualitative_cycling_infrastructure + Cycling_friendly_environment + Busy_traffic + Traffic_safety + Negative_parking_experiences + Qualitative_public_transport + Neighbourhood_social_cohesion + Attractive_living_environment + Encouragement_for_PA + Satisfaction_with_friendships_in_neighbourhood + Satisfaction_with_events_in_neighbourhood
-
 
 
 #residual correlations / covariates
 Social_environment ~~ Built_environment
-#Health_related_wellbeing ~~ Mental_health
 
-#Neighbourhood_social_cohesion ~~ Attractive_living_environment
-#Neighbourhood_social_cohesion ~~ Encouragement_for_PA
-#Neighbourhood_social_cohesion ~~ Satisfaction_with_friendships_in_neighbourhood
-#Attractive_living_environment ~~ Encouragement_for_PA
-#Attractive_living_environment ~~ Satisfaction_with_friendships_in_neighbourhood
-#Encouragement_for_PA ~~ Satisfaction_with_friendships_in_neighbourhood
-#EQ_5D_index ~~ VAS
-#Stress ~~ No_self_esteem
-#Stress ~~ Successful_coping
-#No_self_esteem ~~ Successful_coping
 
 '
 
