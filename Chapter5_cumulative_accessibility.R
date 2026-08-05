@@ -835,75 +835,6 @@ train_df <- train_sf |>
 
 
 
-#Select only origin points close to train stations --> maximum 20 minutes walk, bus and/or tram (during peak hours --> 9 am)
-
-origins_all_df <- all_unique_origins %>%
-  transmute(
-    id  = as.character(new_ID),
-    lon = as.numeric(lon),
-    lat = as.numeric(lat)
-  ) %>%
-  distinct(id, .keep_all = TRUE)
-
-stopifnot(
-  !anyDuplicated(origins_all_df$id),
-  !anyNA(origins_all_df$lon),
-  !anyNA(origins_all_df$lat)
-)
-
-#Accessibility of stations (travel time matrix)
-station_access_2024 <- r5r::travel_time_matrix(
-  r5r_network        = r5r_network_2024,
-  origins            = origins_all_df,
-  destinations       = train_df,
-  mode               = c("WALK", "BUS", "TRAM"),
-  mode_egress        = "WALK",
-  departure_datetime = as.POSIXct(
-    "2024-01-18 09:00:00",
-    tz = "Europe/Brussels"
-  ),
-  time_window         = 60L,
-  percentiles         = 50L,
-  max_walk_time       = 20,
-  max_trip_duration   = 20,
-  max_rides           = 2,
-  progress            = TRUE
-)
-
-#Select origin points closer than 20 minutes
-names(station_access_2024)
-eligible_origins_2024 <- station_access_2024 %>%
-  filter(travel_time_p50 <= 20) %>%
-  group_by(from_id) %>%
-  summarise(
-    nearest_station_time = min(travel_time_p50, na.rm = TRUE),
-    number_stations_20min = n_distinct(to_id),
-    .groups = "drop"
-  )
-
-#Joining with origin points
-origins_near_station_2024 <- all_unique_origins %>%
-  mutate(new_ID = as.character(new_ID)) %>%
-  inner_join(
-    eligible_origins_2024,
-    by = c("new_ID" = "from_id")
-  )
-
-#Check number of selected origins
-cat(
-  "Alle unieke origins:", nrow(all_unique_origins), "\n",
-  "Binnen 20 min van station:", nrow(origins_near_station_2024), "\n",
-  "Aandeel geselecteerd:",
-  round(100 * nrow(origins_near_station_2024) / nrow(all_unique_origins), 1),
-  "%\n"
-)
-
-#Save selection
-write.csv(
-  origins_near_station_2024,
-  "origins_within_20min_station_2024.csv",
-  row.names = FALSE
-)
 
 # -----------------------------------------
 # 4) Basis parameters r5r
@@ -923,13 +854,13 @@ departure_datetime <- as.POSIXct("18-01-2024 06:00:00", format="%d-%m-%Y %H:%M:%
 #ids <- all_unique_origins$new_ID
 #n   <- length(ids)
 
-analysis_origins <- origins_near_station_2024
+analysis_origins <- all_unique_origins
 
 
 origins_analysis_df <- analysis_origins %>%
   transmute(
-    id     = as.character(new_ID),  # alleen voor r5r
-    new_ID = as.integer(new_ID),    # sleutel voor koppeling
+    id     = as.character(new_ID),  
+    new_ID = as.integer(new_ID),    
     lon    = as.numeric(lon),
     lat    = as.numeric(lat)
   ) %>%
@@ -2468,7 +2399,7 @@ departure_datetime <- as.POSIXct("18-01-2024 09:00:00", format="%d-%m-%Y %H:%M:%
 #ids <- all_unique_origins$new_ID
 #n   <- length(ids)
 
-analysis_origins <- origins_near_station_2024
+analysis_origins <- all_unique_origins
 
 
 
@@ -4011,7 +3942,7 @@ departure_datetime <- as.POSIXct("18-01-2024 12:00:00", format="%d-%m-%Y %H:%M:%
 #ids <- all_unique_origins$new_ID
 #n   <- length(ids)
 
-analysis_origins <- origins_near_station_2024
+analysis_origins <- all_unique_origins
 
 
 origins_analysis_df <- analysis_origins %>%
@@ -5550,7 +5481,7 @@ departure_datetime <- as.POSIXct("18-01-2024 15:00:00", format="%d-%m-%Y %H:%M:%
 #ids <- all_unique_origins$new_ID
 #n   <- length(ids)
 
-analysis_origins <- origins_near_station_2024
+analysis_origins <- all_unique_origins
 
 
 origins_analysis_df <- analysis_origins %>%
@@ -7090,7 +7021,7 @@ departure_datetime <- as.POSIXct("18-01-2024 18:00:00", format="%d-%m-%Y %H:%M:%
 #ids <- all_unique_origins$new_ID
 #n   <- length(ids)
 
-analysis_origins <- origins_near_station_2024
+analysis_origins <- all_unique_origins
 
 
 origins_analysis_df <- analysis_origins %>%
@@ -8632,7 +8563,7 @@ departure_datetime <- as.POSIXct("18-01-2024 21:00:00", format="%d-%m-%Y %H:%M:%
 #ids <- all_unique_origins$new_ID
 #n   <- length(ids)
 
-analysis_origins <- origins_near_station_2024
+analysis_origins <- all_unique_origins
 
 
 
