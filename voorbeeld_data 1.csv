@@ -1,0 +1,11 @@
+Regio;Geslacht;Leeftijd;Aard;Datum;V/A;Tijd;Straat-1;Nr-1;Postcode-1;Gemeente-1;Land-1;Straat-2;Nr-2;Postcode-2;Gemeente-2;Land-2;Straat-1_original;Nr-1_original;Straat-2_original;Nr-2_original
+VLA;M;37.0;bezoek;01-01-2024;V;10:00;Schillingsstraat;43.0;3680;Maaseik;BE;jozef smeetslaan;246.0;3630;maasmechelen;BE;Schillingsstraat;43.0;jozef smeetslaan;246.0
+VLA;V;29.0;interventie;03-01-2024;A;14:30;Kerkstraat;12.0;9000;Gent;BE;Brugsevaart;88.0;8200;Brugge;BE;kerkstraat;12.0;brugsevaart;88.0
+VLA;M;52.0;controle;05-01-2024;V;08:15;Diestsesteenweg;101.0;3000;Leuven;BE;Tiensestraat;24.0;3000;Leuven;BE;diestsesteenweg;101.0;tiensestraat;24.0
+VLA;V;41.0;bezoek;07-01-2024;A;16:45;Antwerpsesteenweg;56.0;9100;Sint-Niklaas;BE;Grote Markt;3.0;9100;Sint-Niklaas;BE;antwerpsesteenweg;56.0;grote markt;3.0
+VLA;M;24.0;interventie;09-01-2024;V;11:20;Gentsestraat;77.0;8500;Kortrijk;BE;Doorniksestraat;19.0;8500;Kortrijk;BE;gentsestraat;77.0;doorniksestraat;19.0
+VLA;V;63.0;controle;11-01-2024;A;09:50;Turnhoutsebaan;145.0;2100;Deurne;BE;Bredabaan;210.0;2170;Merksem;BE;turnhoutsebaan;145.0;bredabaan;210.0
+VLA;M;33.0;bezoek;13-01-2024;V;13:10;Stationsstraat;5.0;3500;Hasselt;BE;Kempische Steenweg;60.0;3500;Hasselt;BE;stationsstraat;5.0;kempische steenweg;60.0
+VLA;V;47.0;interventie;15-01-2024;A;17:35;Molenstraat;18.0;2800;Mechelen;BE;Bruul;9.0;2800;Mechelen;BE;molenstraat;18.0;bruul;9.0
+VLA;M;19.0;controle;17-01-2024;V;07:40;Nieuwstraat;22.0;8000;Brugge;BE;Zuidzandstraat;44.0;8000;Brugge;BE;nieuwstraat;22.0;zuidzandstraat;44.0
+VLA;V;58.0;bezoek;19-01-2024;A;15:05;Rijselstraat;71.0;8900;Ieper;BE;Meensestraat;33.0;8900;Ieper;BE;rijselstraat;71.0;meensestraat;33.0
